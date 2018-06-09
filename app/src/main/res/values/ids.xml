@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="recipe_fragment_body_part_container" type="id">string</item>
+</resources>
