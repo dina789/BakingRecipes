@@ -39,8 +39,9 @@ public class ReceipeActivity extends AppCompatActivity  implements ReceipeFragme
         //use a fragment manager and transaction to add the fragment to screeen (adds fragment to specifed container)
 
         if (savedInstanceState == null) {
-
+            // Then the application is not being reloaded
             // using a fragment transaction.
+          // Restore last state for checked position.
 
             //create a new bodyparts fragment instance and display it using fragment manager:
             ReceipeFragment headfragment = new ReceipeFragment();
@@ -87,15 +88,22 @@ public class ReceipeActivity extends AppCompatActivity  implements ReceipeFragme
 
     }
 //connectivity network info
+
+
+
+
+
+
+
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
     }
 
 
-
-
-
-
-
-
+}
 
 
 
@@ -105,6 +113,10 @@ public class ReceipeActivity extends AppCompatActivity  implements ReceipeFragme
 
 
 /**
+ * Master detail flow tutorial (from mentor):
+ * https://www.techotopia.com/index.php/An_Android_Master/Detail_Flow_Tutorial
+ *another tutoriAL:
+ * https://google-developer-training.gitbooks.io/android-developer-advanced-course-practicals/unit-1-expand-the-user-experience/lesson-1-fragments/1-2-p-communicating-with-a-fragment/1-2-p-communicating-with-a-fragment.html
  *passing  serializable list using Bundle.Serializable:
  *https://stackoverflow.com/questions/14333449/passing-data-through-intent-using-serializable
  *
@@ -122,6 +134,8 @@ public class ReceipeActivity extends AppCompatActivity  implements ReceipeFragme
  * on how to use on saved instance:
  * https://stackoverflow.com/questions/6525698/how-to-use-onsavedinstancestate-example-please
  *
+ *check for loading data:
+ * https://github.com/AKBwebdev/BakingApp/blob/master/app/src/main/java/com/example/android/bakingapp/fragments/RecipeListFragment.java
  *
  *https://github.com/AbduallahAtta/BakingApp/tree/master/app/src/main/res/layout
  *https://github.com/matewiszt/AnnasBakery/blob/master/app/src/main/java/com/example/android/annasbakery/activity/DetailActivity.java

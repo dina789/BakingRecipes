@@ -80,4 +80,5 @@ master list fragment will not change during actiivty runtime i can use fragment 
 bundle is a set of key values pairs
  */
 
-
+//https://stackoverflow.com/questions/15313598/once-for-all-how-to-correctly-save-instance-state-of-fragments-in-back-stack/17135346#17135346
+//https://github.com/AKBwebdev/BakingApp/blob/master/app/src/main/java/com/example/android/bakingapp/fragments/RecipeListFragment.java

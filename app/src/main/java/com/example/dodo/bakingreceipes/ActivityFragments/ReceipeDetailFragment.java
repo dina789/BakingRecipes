@@ -13,3 +13,6 @@ public class ReceipeDetailFragment extends AppCompatActivity {
         setContentView(R.layout.activity_receipe_detail_fragment);
     }
 }
+
+
+//https://github.com/MoaazElneshawy/BakingApp/blob/master/app/src/main/java/com/example/moaazfathy/bakingapp/Activities/RecipeDetailsActivity.java
