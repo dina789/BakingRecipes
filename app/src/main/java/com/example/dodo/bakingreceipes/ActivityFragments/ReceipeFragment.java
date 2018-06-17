@@ -23,8 +23,8 @@ public class ReceipeFragment extends Fragment
         void onRecipeClicked(Receipe recipeModel);
         void showErrorSnackBar();
     }
-//empty constructor for initializing fragment
-   public ReceipeFragment()
+     //empty constructor for initializing fragment
+      public ReceipeFragment()
    {
     }
 
@@ -41,32 +41,37 @@ public class ReceipeFragment extends Fragment
 
          Recycler_Recipe.setAdapter(recipesAdapter);
 
-
      return rootView;
-// i need to check which layout is going to be loaded?
-        if (rootView.findViewById(R.id.check_view) != null)
+
+
+
+
+        // i need to check which layout is going to be loaded?
+        if (rootView.getTag()!=null && rootView.getTag().equals("phone-land"))
+
+        {
             Recycler_Recipe.setLayoutManager(new GridLayoutManager(rootView.getContext(), 2, GridLayoutManager.VERTICAL, false));
-        else
-            Recycler_Recipe.setLayoutManager(new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false));
 
-        Recycler_Recipe.setHasFixedSize(true);
-        Recycler_Recipe.setAdapter(recipesAdapter);
+        }   else
 
+            {
 
-
+                Recycler_Recipe.setLayoutManager(new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false));
 
 
+                Recycler_Recipe.setHasFixedSize(true);
+                Recycler_Recipe.setAdapter(recipesAdapter);
 
 
-
-
-    }
+       }
 
 
 
 
 
-}
+
+
+}}
 
 /*
 on fragments layout :

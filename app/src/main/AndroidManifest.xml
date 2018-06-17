@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dodo.bakingreceipes">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    "
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,7 +21,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ReceipeDetailActivity" />
-        <activity android:name=".ActivityFragments.ReceipeDetailFragment"></activity>
+        <activity android:name=".ActivityFragments.ReceipeDetailFragment" />
+        <activity android:name=".RecipeIngredientActivity" />
+        <activity android:name=".StepDetailActivity" />
+        <activity android:name=".RecipeDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -3,4 +3,5 @@
     <string name="step_title">step_title</string>
     <string name="Recipe_Title">Recipe_Title</string>
     <string name="step_Title">step_Title</string>
+    <item name="recipe_container" type="id">String</item>
 </resources>

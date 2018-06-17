@@ -1,7 +1,11 @@
 package com.example.dodo.bakingreceipes;
 
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Build;
 import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
@@ -41,70 +45,60 @@ public class ReceipeActivity extends AppCompatActivity  implements ReceipeFragme
         if (savedInstanceState == null) {
             // Then the application is not being reloaded
             // using a fragment transaction.
-          // Restore last state for checked position.
+            // Restore last state for checked position.
 
             //create a new bodyparts fragment instance and display it using fragment manager:
             ReceipeFragment headfragment = new ReceipeFragment();
 
             //fragment transaction
-            getSupportFragmentManager().beginTransaction().add(R.id.recipe_fragment_body_part_container, headfragment).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.receipe_container, headfragment).commit();
         }
 
     }
+        private void setSupportActionBar (Toolbar toolbar){
 
-    private void setSupportActionBar(Toolbar toolbar) {
-
-    }
-
+        }
 
 
+        @Override
+        public void onRecipeClicked (Receipe recipeModel){
+            //bundle it up and attach it to a new activity that launches receipe detail activity
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("key", recipeModel);
+            Intent intent = new Intent(this, ReceipeDetailActivity.class);
+            intent.putExtras(bundle);
+            startActivity(intent);
+
+        }
 
 
+        @Override
+        public void showErrorSnackBar () {
+
+        }
 
 
-
-
-
-    @Override
-    public void onRecipeClicked(Receipe recipeModel) {
-        //bundle it up and attach it to a new activity that launches receipe detail activity
-
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("key", recipeModel);
-        Intent intent = new Intent(this, ReceipeDetailActivity.class);
-        intent.putExtras(bundle);
-        startActivity(intent);
-
-    }
-
-
-
-
-
-
-
-    @Override
-    public void showErrorSnackBar() {
-
-    }
-//connectivity network info
+        @Override
+        public void onSaveInstanceState (Bundle outState){
+            super.onSaveInstanceState(outState);
+        }
 
 
 
 
+    //connectivity network info
 
-
-
-
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        assert connectivityManager != null;
+         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
 
 }
-
 
 
 
