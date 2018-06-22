@@ -2,10 +2,7 @@ package com.example.dodo.bakingreceipes.Models;
 
 import java.io.Serializable;
 
-public class Ingredients implements Serializable{
-
-
-
+public class Ingredients implements Serializable {
 
 
     private float quantity;

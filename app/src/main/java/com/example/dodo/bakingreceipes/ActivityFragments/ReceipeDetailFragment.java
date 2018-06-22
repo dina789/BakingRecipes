@@ -1,7 +1,7 @@
 package com.example.dodo.bakingreceipes.ActivityFragments;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.dodo.bakingreceipes.R;
 
@@ -9,7 +9,6 @@ public class ReceipeDetailFragment extends AppCompatActivity {
 
 
     private Bundle arguments;
-
 
 
     @Override
@@ -20,7 +19,6 @@ public class ReceipeDetailFragment extends AppCompatActivity {
 
 
     public void setArguments(Bundle arguments) {
-
 
 
         this.arguments = arguments;

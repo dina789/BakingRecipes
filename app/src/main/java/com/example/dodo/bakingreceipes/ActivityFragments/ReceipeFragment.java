@@ -8,7 +8,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 
 import com.example.dodo.bakingreceipes.Adapters.ReceipeAdapter;
 import com.example.dodo.bakingreceipes.Models.Receipe;
@@ -16,62 +15,56 @@ import com.example.dodo.bakingreceipes.R;
 import com.example.dodo.bakingreceipes.ReceipeActivity;
 
 
-public class ReceipeFragment extends Fragment
-{
+public class ReceipeFragment extends Fragment {
 
-    public interface RecipeListener {
-        void onRecipeClicked(Receipe recipeModel);
-        void showErrorSnackBar();
-    }
-     //empty constructor for initializing fragment
-      public ReceipeFragment()
-   {
+    //empty constructor for initializing fragment
+    public ReceipeFragment() {
     }
 
-
-     //Inflate fragment layout and sets recycler view
+    //Inflate fragment layout and sets recycler view
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-     //inflate baking app fragment layout:
+        //inflate baking app fragment layout:
         View rootView = inflater.inflate(R.layout.recipe_fragment_body_parts, container, false);
 
-         RecyclerView Recycler_Recipe=(RecyclerView) rootView.findViewById(R.id.Recycler_Recipe);
+        RecyclerView Recycler_Recipe = (RecyclerView) rootView.findViewById(R.id.Recycler_Recipe);
 
-         ReceipeAdapter recipesAdapter =new ReceipeAdapter((ReceipeActivity)getActivity());
+        ReceipeAdapter recipesAdapter = new ReceipeAdapter((ReceipeActivity) getActivity());
 
-         Recycler_Recipe.setAdapter(recipesAdapter);
+        Recycler_Recipe.setAdapter(recipesAdapter);
 
-     return rootView;
-
-
+        return rootView;
 
 
         // i need to check which layout is going to be loaded?
-        if (rootView.getTag()!=null && rootView.getTag().equals("phone-land"))
+        if (rootView.getTag() != null && rootView.getTag().equals("phone-land"))
 
         {
             Recycler_Recipe.setLayoutManager(new GridLayoutManager(rootView.getContext(), 2, GridLayoutManager.VERTICAL, false));
 
-        }   else
+        } else
 
-            {
+        {
 
-                Recycler_Recipe.setLayoutManager(new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false));
-
-
-                Recycler_Recipe.setHasFixedSize(true);
-                Recycler_Recipe.setAdapter(recipesAdapter);
+            Recycler_Recipe.setLayoutManager(new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false));
 
 
-       }
+            Recycler_Recipe.setHasFixedSize(true);
+            Recycler_Recipe.setAdapter(recipesAdapter);
 
 
+        }
 
 
+    }
 
 
+    public interface RecipeListener {
+        void onRecipeClicked(Receipe recipeModel);
 
-}}
+        void showErrorSnackBar();
+    }
+}
 
 /*
 on fragments layout :

@@ -3,5 +3,8 @@
     <string name="step_title">step_title</string>
     <string name="Recipe_Title">Recipe_Title</string>
     <string name="step_Title">step_Title</string>
+    <string name="recipe_step">recipe_step</string>
     <item name="recipe_container" type="id">String</item>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
 </resources>
